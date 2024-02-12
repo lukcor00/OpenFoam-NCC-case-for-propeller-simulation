@@ -1,0 +1,24 @@
+#PseudoCode bullshit for parametric sweep
+
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+for (( i=13000; i <= 17000; i=i+1000 ))
+do
+   mkdir $i
+   for k in 2.5e-05 3.3333333333333335e-05 4.1666666666666665e-05 5e-05 5.833333333333333e-05
+   do
+      echo "--------- Parameter -----------"
+      echo "$i        $k"
+      runParallel -s $i-$k-first foamDictionary "$(foamListTimes -latestTime -processor)"/U -entry boundaryField/inlet/volumetricFlowRate/value -set $k 
+      runApplication -s $i-$k-second foamDictionary BC -entry motion/rpm -set $i
+      echo "_______________________________"
+      runParallel -s $i-$k foamRun
+      runApplication -s $i-$k reconstructPar -latestTime
+      mv "$(foamListTimes -latestTime -processor)" $i/$k
+      mv postProcessing $i/postProcessing_$k
+      rm -r processor*/"$(foamListTimes -latestTime -processor)"
+      echo "--------- End of Iteration ----"
+   done
+done
+
+echo "--------- End of Sweep --------"

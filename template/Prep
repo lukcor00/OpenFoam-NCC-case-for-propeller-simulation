@@ -1,0 +1,6 @@
+changeDictionary | tee logs/log.changeDictionary
+createBaffles -overwrite | tee logs/log.createBaffles
+splitBaffles -overwrite | tee logs/log.splitBaffles
+createNonConformalCouples NCC1 NCC1_SHADOW -overwrite | tee logs/log.createNonConformalCouples.1
+decomposePar -noFields | tee logs/log.decomposePar
+mpirun checkMesh -parallel | tee logs/log.checkMesh

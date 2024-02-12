@@ -1,0 +1,43 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 11-d5b4d966c3c5
+Exec   : createNonConformalCouples NCC1 NCC1_SHADOW -overwrite
+Date   : Feb 03 2024
+Time   : 16:42:41
+Host   : "User-PC"
+PID    : 1065
+I/O    : uncollated
+Case   : /mnt/g/OpenFOAM_models/Propellers/Krechet_propeller/prop-test-poly
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Adding nonConformalCyclic interfaces between patches: 
+    (NCC1 NCC1_SHADOW)
+Named:
+    (nonConformalCyclic_on_NCC1 nonConformalCyclic_on_NCC1_SHADOW)
+With transform: 
+    transformType   none;
+
+patchToPatch: Calculating couplings between 16725 source faces and 16725 target faces
+    Source min/average/max coverage = 1/1/1
+    Target min/average/max coverage = 1/1/1
+    Source average openness/error/depth/angle = 4.40023760017e-17/1.0401762595e-15/4.87677679577e-16/6.98396849994e-08
+    Source max openness/error/depth/angle = 3.58395353745e-15/3.18090018165e-14/1.19870087061e-14/1.7075472925e-06
+    34002 couplings calculated in 2.081004s
+fvMeshStitcher: Connecting
+Writing mesh to 0
+
+End
+

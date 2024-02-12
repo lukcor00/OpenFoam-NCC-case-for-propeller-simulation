@@ -1,0 +1,62 @@
+FoamFile
+{
+	version 2.0;
+	format binary;
+	class volVectorField;
+	location "";
+	object U;
+}
+/*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+$../BC!flow
+$../BC!motion
+
+dimensions [0 1 -1 0 0 0 0];
+
+internalField uniform (0 0 0);
+
+boundaryField
+{
+	inlet
+	{
+        type            pressureInletVelocity;
+		value			uniform (0 0 0);
+	}
+
+	outlet
+	{
+        type            inletOutlet;
+		inletValue		uniform (0 0 0);
+        value           uniform (0 0 0);
+	}
+
+	wall
+	{
+		type	noSlip;
+	}
+
+	walls_far_field
+	{
+		type	slip;
+	}
+
+    rotor
+    {
+        timeScheme      ${${FOAM_CASE}/system/fvSchemes!ddtSchemes/default};
+    #ifeq $timeScheme steadyState
+        type            MRFnoSlip;
+    #else
+        type            movingWallVelocity;
+    #endif
+        value           uniform (0 0 0);
+    }
+
+	NCC
+	{
+		type MRFslip;
+		value	uniform (0 0 0);
+	}
+
+	#includeEtc "caseDicts/setConstraintTypes"
+}

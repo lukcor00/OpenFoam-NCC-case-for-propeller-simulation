@@ -1,0 +1,46 @@
+FoamFile
+{
+	version 2.0;
+	format binary;
+	class volScalarField;
+	location "";
+	object k;
+}
+/*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+$../BC!turbulent
+
+dimensions [0 2 -2 0 0 0 0];
+
+internalField uniform $k;
+
+
+boundaryField
+{
+	inlet
+	{
+		type	fixedValue;
+		value	uniform $k;
+	}
+
+	outlet
+	{
+		type	inletOutlet;
+		inletValue	uniform $k;
+		value	uniform	$k;
+	}
+
+	wall
+	{
+		type	kLowReWallFunction;
+		value	uniform $kWall;
+	}
+	
+	NCC
+	{
+		type	zeroGradient;
+	}
+
+	#includeEtc "caseDicts/setConstraintTypes"
+}

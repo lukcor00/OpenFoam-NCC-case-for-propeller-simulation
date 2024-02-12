@@ -1,0 +1,30 @@
+FoamFile
+{
+	version 2.0;
+	format binary;
+	class dictionary;
+	location "";
+	object dynamicMeshDict;
+}
+/*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+timeScheme      ${${FOAM_CASE}/system/fvSchemes!ddtSchemes/default};
+
+#ifeq $timeScheme steadyState
+mov mover-disabled;
+#else
+mov mover;
+#endif
+
+$mov
+{
+    type            motionSolver;
+
+    libs            ("libfvMeshMovers.so" "libfvMotionSolvers.so");
+
+    motionSolver    solidBody;
+    solidBodyMotionFunction  rotatingMotion;
+
+    $../BC!motion
+}

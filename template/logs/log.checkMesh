@@ -1,0 +1,161 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 11-d5b4d966c3c5
+Exec   : checkMesh -parallel
+Date   : Feb 04 2024
+Time   : 19:06:26
+Host   : "User-PC"
+PID    : 7925
+I/O    : uncollated
+Case   : /mnt/g/OpenFOAM_models/Propellers/Krechet_propeller/prop-test-poly-2
+nProcs : 12
+Slaves : 
+11
+(
+"User-PC.7926"
+"User-PC.7927"
+"User-PC.7928"
+"User-PC.7929"
+"User-PC.7930"
+"User-PC.7931"
+"User-PC.7932"
+"User-PC.7933"
+"User-PC.7934"
+"User-PC.7935"
+"User-PC.7936"
+)
+
+Pstream initialised with:
+    floatTransfer      : false
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+--> FOAM Warning : 
+    From function static Foam::instantList Foam::timeSelector::select0(Foam::Time&, const Foam::argList&)
+    in file db/Time/timeSelector.C at line 269
+    No time specified or available, selecting 'constant'
+Create polyMesh for time = constant
+
+Time = constant
+
+Mesh stats
+    points:           11235912
+    faces:            23562091
+    internal faces:   23127341
+    cells:            6436196
+    faces per cell:   7.2541967336
+    boundary patches: 17
+    point zones:      0
+    face zones:       1
+    cell zones:       2
+
+Overall number of cells of each type:
+    hexahedra:     4535615
+    prisms:        198292
+    wedges:        9744
+    pyramids:      214
+    tet wedges:    97
+    tetrahedra:    6011
+    polyhedra:     1686223
+    Breakdown of polyhedra by number of faces:
+        faces   number of cells
+            5   598
+            6   9746
+            7   119796
+            8   165599
+            9   435234
+           10   156434
+           11   126729
+           12   220684
+           13   141369
+           14   115474
+           15   82420
+           16   52430
+           17   27512
+           18   13464
+           19   6020
+           20   3065
+           21   2113
+           22   1684
+           23   1353
+           24   959
+           25   703
+           26   595
+           27   421
+           28   340
+           29   317
+           30   278
+           31   241
+           32   169
+           33   176
+           34   121
+           35   53
+           36   44
+           37   23
+           38   22
+           39   8
+           40   13
+           41   7
+           42   2
+           43   2
+           44   2
+           46   2
+           47   1
+
+Checking topology...
+    Boundary definition OK.
+    Cell to face addressing OK.
+    Point usage OK.
+    Upper triangular ordering OK.
+    Face vertices OK.
+    Number of regions: 1 (OK).
+
+Checking basic patch addressing...
+                   Patch    Faces   Points
+        walls_stem_inrot     8659     8579
+             rotor_heaps    14145    14607
+       rotor_blade_2_tip     1817     1868
+           rotor_blade_2    73209    73450
+       rotor_blade_1_tip     1863     1925
+           rotor_blade_1    72905    73105
+               rotor_hub    21079    20746
+              rotor_stem     3973     4022
+              walls_stem    18888    18830
+                  outlet     3457     3756
+                   inlet    11598    12074
+         walls_far_field    16385    16541
+
+Checking geometry...
+    Overall domain bounding box (-3.75 -1.24999999998 -1.25) (1.444 1.25 1.25)
+    Mesh has 3 geometric (non-empty/wedge) directions (1 1 1)
+    Mesh has 3 solution (non-empty) directions (1 1 1)
+    Boundary openness (-1.10628103703e-16 9.23341546853e-16 2.05032883838e-16) OK.
+    Max cell openness = 9.4840065872e-16 OK.
+    Max aspect ratio = 37.5287972874 OK.
+    Minimum face area = 2.49352760823e-10. Maximum face area = 0.00450678891107.  Face area magnitudes OK.
+    Min volume = 1.77700525506e-14. Max volume = 0.000334537722941.  Total volume = 25.4878133949.  Cell volumes OK.
+    Mesh non-orthogonality Max: 78.5005823833 average: 16.3939261329
+   *Number of severely non-orthogonal (> 70 degrees) faces: 236.
+    Non-orthogonality check OK.
+  <<Writing 236 non-orthogonal faces to set nonOrthoFaces
+    Face pyramids OK.
+    Max skewness = 2.75755031716 OK.
+    Coupled point location match (average 0) OK.
+
+Mesh OK.
+
+End
+
+Finalising parallel run

@@ -1,0 +1,25 @@
+FoamFile
+{
+	version 2.0;
+	format binary;
+	class dictionary;
+	location "";
+	object momentumTransport;
+}
+/*---------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+$../BC!turbulent
+
+
+simulationType $simulationType;
+
+RAS
+{
+	model $model;
+
+	turbulence on;
+
+	printCoeffs on;
+	
+}

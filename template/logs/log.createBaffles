@@ -1,0 +1,39 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 11-d5b4d966c3c5
+Exec   : createBaffles -overwrite
+Date   : Feb 03 2024
+Time   : 16:42:07
+Host   : "User-PC"
+PID    : 1061
+I/O    : uncollated
+Case   : /mnt/g/OpenFOAM_models/Propellers/Krechet_propeller/prop-test-poly
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading "createBafflesDict"
+
+Not converting faces on non-coupled patches.
+
+Created zone 'NCC' with 16725 faces
+
+Adding patch 'NCC1' to the mesh
+Adding patch 'NCC1_SHADOW' to the mesh
+
+Converted 16725 faces into boundary faces on patches 'NCC1' and 'NCC1_SHADOW'
+
+Writing mesh to 0
+End
+

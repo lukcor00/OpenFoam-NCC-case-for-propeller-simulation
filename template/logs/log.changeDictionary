@@ -1,0 +1,139 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 11-d5b4d966c3c5
+Exec   : changeDictionary
+Date   : Feb 04 2024
+Time   : 19:05:57
+Host   : "User-PC"
+PID    : 7916
+I/O    : uncollated
+Case   : /mnt/g/OpenFOAM_models/Propellers/Krechet_propeller/prop-test-poly-2
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+--> FOAM Warning : 
+changeDictionary has been superseded by foamDictionary and is now deprecated.
+
+Create time
+
+Create mesh for time = 0
+
+Reading "changeDictionaryDict"
+
+Read dictionary "/mnt/g/OpenFOAM_models/Propellers/Krechet_propeller/prop-test-poly-2/system/changeDictionaryDict" with replacements for dictionaries 1(boundary)
+Reading polyMesh/boundary file to extract patch names
+Loaded dictionary boundary with entries 
+12
+(
+walls_stem_inrot
+rotor_heaps
+rotor_blade_2_tip
+rotor_blade_2
+rotor_blade_1_tip
+rotor_blade_1
+rotor_hub
+rotor_stem
+walls_stem
+outlet
+inlet
+walls_far_field
+)
+
+Replacing entries in dictionary boundary
+Special handling of boundary as polyMesh/boundary file.
+Merging entries from 1(rotor.*)
+fieldDict:
+{
+    walls_stem_inrot
+    {
+        type            wall;
+        startFace       23220727;
+        nFaces          8659;
+    }
+    rotor_heaps
+    {
+        type            wall;
+        startFace       23229386;
+        nFaces          14145;
+        inGroups        List<word> 1(rotor);
+    }
+    rotor_blade_2_tip
+    {
+        type            wall;
+        startFace       23243531;
+        nFaces          1817;
+        inGroups        List<word> 1(rotor);
+    }
+    rotor_blade_2
+    {
+        type            wall;
+        startFace       23245348;
+        nFaces          73209;
+        inGroups        List<word> 1(rotor);
+    }
+    rotor_blade_1_tip
+    {
+        type            wall;
+        startFace       23318557;
+        nFaces          1863;
+        inGroups        List<word> 1(rotor);
+    }
+    rotor_blade_1
+    {
+        type            wall;
+        startFace       23320420;
+        nFaces          72905;
+        inGroups        List<word> 1(rotor);
+    }
+    rotor_hub
+    {
+        type            wall;
+        startFace       23393325;
+        nFaces          21079;
+        inGroups        List<word> 1(rotor);
+    }
+    rotor_stem
+    {
+        type            wall;
+        startFace       23414404;
+        nFaces          3973;
+        inGroups        List<word> 1(rotor);
+    }
+    walls_stem
+    {
+        type            wall;
+        startFace       23418377;
+        nFaces          18888;
+    }
+    outlet
+    {
+        type            patch;
+        startFace       23437265;
+        nFaces          3457;
+    }
+    inlet
+    {
+        type            patch;
+        startFace       23440722;
+        nFaces          11598;
+    }
+    walls_far_field
+    {
+        type            wall;
+        startFace       23452320;
+        nFaces          16385;
+    }
+}
+
+Writing modified boundary
+
+End
+

@@ -1,0 +1,5 @@
+cp -rt 0.org 0
+decomposePar | tee logs/log.decomposePar.1
+mpirun potentialFoam -parallel | tee logs/log.potentialFoam  
+mpirun foamRun -parallel | tee logs/log.foamRun
+reconstructPar | tee logs/log.reconstructPar

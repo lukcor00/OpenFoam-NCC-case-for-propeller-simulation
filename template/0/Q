@@ -1,0 +1,86 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  11
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      Q;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 -2 0 0 0 0];
+
+internalField   uniform 0;
+
+boundaryField
+{
+    walls_stem_inrot
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    rotor_heaps
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    rotor_blade_2_tip
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    rotor_blade_2
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    rotor_blade_1_tip
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    rotor_blade_1
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    rotor_hub
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    rotor_stem
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    walls_stem
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    outlet
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    inlet
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+    walls_far_field
+    {
+        type            calculated;
+        value           uniform 0;
+    }
+}
+
+
+// ************************************************************************* //
